@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 15% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 15% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 263 70% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 263 70% 50%;
+    --radius: 0.625rem;
+    --sidebar-background: 240 15% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 263 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 10% 20%;
+    --sidebar-ring: 263 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-roboto antialiased;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit font-bold;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card style */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+  }
+  
+  /* Glow effect on hover */
+  .glow-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .glow-hover:hover {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+  }
+  
+  /* Section container */
+  .section-container {
+    @apply w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-16 sm:py-20 lg:py-24;
+  }
+  
+  /* Animated background gradient */
+  .animated-gradient {
+    background: linear-gradient(-45deg, #7c3aed, #3b82f6, #5b21b6, #1e40af);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+  
+  /* Slide in from left animation */
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Slide in from right animation */
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Fade in up animation */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Stagger children animation */
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+  .stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+  
+  /* Profile image 3D tilt container */
+  .profile-tilt {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  /* Button magnetic effect */
+  .magnetic-btn {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  
+  .magnetic-btn::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-purple to-blue opacity-0 transition-opacity duration-300;
+  }
+  
+  .magnetic-btn:hover::before {
+    @apply opacity-100;
+  }
+  
+  /* Timeline line */
+  .timeline-line {
+    @apply absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple to-blue;
+    transform: translateX(-50%);
+  }
+  
+  /* Skill badge */
+  .skill-badge {
+    @apply px-4 py-2 rounded-full text-sm font-medium bg-white/10 border border-white/20 
+           transition-all duration-300 hover:bg-purple/20 hover:border-purple/50 hover:scale-105;
+  }
+  
+  /* Project card */
+  .project-card {
+    @apply glass-card p-6 transition-all duration-500;
+  }
+  
+  .project-card:hover {
+    @apply scale-105;
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.3);
+  }
+  
+  /* Navigation link */
+  .nav-link {
+    @apply relative text-white/70 hover:text-white transition-colors duration-300;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple to-blue transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  /* Form input focus */
+  .form-input {
+    @apply bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-white/50
+           transition-all duration-300 focus:outline-none focus:border-purple focus:ring-2 focus:ring-purple/20;
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #7c3aed, #3b82f6);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #a78bfa, #60a5fa);
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Text balance for better typography */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
