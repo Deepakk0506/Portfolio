@@ -2,7 +2,7 @@
 
 ## 🚀 About Me
 
-A passionate and innovative Full-Stack Developer specializing in modern web technologies. I craft exceptional digital experiences with a focus on performance, accessibility, and user-centric design. My expertise spans from responsive front-end interfaces to scalable back-end architectures.
+A passionate and innovative AI Developer specializing in modern web technologies. I craft exceptional digital experiences with a focus on performance, accessibility, and user-centric design. My expertise spans from responsive front-end interfaces to scalable back-end architectures.
 
 ## 🎯 Key Highlights
 
@@ -78,18 +78,6 @@ A passionate and innovative Full-Stack Developer specializing in modern web tech
 - **Tech Stack**: React, Python, TensorFlow, FastAPI
 - **Impact**: Reduced content creation time by 70%
 - **Features**: Natural language processing, automated SEO optimization
-
-## 🛠️ Development Philosophy
-
-```javascript
-const developmentPrinciples = {
-  cleanCode: "Write code that humans can understand",
-  performance: "Optimize for user experience first",
-  collaboration: "Great products are built by great teams",
-  learning: "Stay curious, embrace new technologies",
-  quality: "Test everything, deploy with confidence"
-};
-```
 
 ## 📊 Technical Achievements
 
