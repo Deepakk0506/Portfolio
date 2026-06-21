@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "rootDirectory": "app",
+  "build": {
+    "command": "npm run build",
+    "outputDirectory": "dist"
+  }
+}
