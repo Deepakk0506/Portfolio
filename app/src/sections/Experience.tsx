@@ -11,6 +11,14 @@ const responsibilities = [
 
 const technologies = ['Cursor AI', 'Firebase Studio', 'Canva', 'Google Workspace', 'Amazon Seller Central', 'Flipkart Seller'];
 
+const sunroksResponsibilities = [
+  'Worked on full-stack application development involving frontend interfaces, backend services, database integration, and API connectivity.',
+  'Designed and tested application features across multiple environments, ensuring functionality, usability, and performance.',
+  'Integrated GitHub-based version control workflows, including repository management, collaboration, debugging, and code maintenance.',
+];
+
+const sunroksTechnologies = ['Frontend Development', 'Backend Services', 'Database Integration', 'API Connectivity', 'GitHub'];
+
 export default function Experience() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -120,6 +128,81 @@ export default function Experience() {
               </h4>
               <div className="flex flex-wrap gap-2">
                 {technologies.map((tech, index) => (
+                  <span
+                    key={tech}
+                    className={`px-3 py-1.5 rounded-full text-xs font-medium bg-white/10 text-white/80 border border-white/20 hover:bg-purple/20 hover:border-purple/30 transition-all duration-300 ${
+                      isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+                    }`}
+                    style={{ transitionDelay: `${800 + index * 50}ms` }}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div 
+          className={`relative mt-8 transition-all duration-700 delay-300 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <div className="glass-card p-6 sm:p-8 lg:p-10 relative overflow-hidden">
+            {/* Header */}
+            <div className="relative flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple to-blue flex items-center justify-center flex-shrink-0">
+                  <Briefcase className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-outfit font-bold text-white mb-1">
+                    Sunroks Intelligent Systems Pvt. Ltd.
+                  </h3>
+                  <p className="text-lg text-purple-light font-medium">
+                    Software Development Intern
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-3 sm:text-right">
+                <div className="flex items-center gap-2 text-white/60">
+                  <Calendar className="w-4 h-4" />
+                  <span className="text-sm">April 2026 – June 2026</span>
+                </div>
+                <div className="flex items-center gap-2 text-white/60">
+                  <MapPin className="w-4 h-4" />
+                  <span className="text-sm">Coimbatore, Tamil Nadu</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Responsibilities */}
+            <div className="relative space-y-4 mb-8">
+              <h4 className="text-lg font-outfit font-semibold text-white mb-4">
+                Key Responsibilities
+              </h4>
+              {sunroksResponsibilities.map((item, index) => (
+                <div
+                  key={index}
+                  className={`flex items-start gap-3 transition-all duration-500 ${
+                    isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+                  }`}
+                  style={{ transitionDelay: `${400 + index * 100}ms` }}
+                >
+                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple to-blue mt-2 flex-shrink-0" />
+                  <p className="text-white/70 leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Technologies */}
+            <div className="relative">
+              <h4 className="text-sm font-outfit font-semibold text-white/60 mb-3">
+                Technologies Used
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {sunroksTechnologies.map((tech, index) => (
                   <span
                     key={tech}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium bg-white/10 text-white/80 border border-white/20 hover:bg-purple/20 hover:border-purple/30 transition-all duration-300 ${
