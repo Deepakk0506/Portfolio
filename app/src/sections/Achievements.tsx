@@ -127,7 +127,9 @@ export default function Achievements() {
                 {/* View Paper Link */}
                 <div className="pt-6">
                   <a 
-                    href="#"
+                    href="https://ieeexplore.ieee.org/document/11118840"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple to-blue text-white font-medium hover:shadow-glow transition-all duration-300 hover:scale-105"
                   >
                     <span>View Publication</span>
@@ -188,7 +190,9 @@ export default function Achievements() {
 
                 <div className="pt-6">
                   <a 
-                    href="#"
+                    href="https://ieeexplore.ieee.org/document/11392863"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple to-blue text-white font-medium hover:shadow-glow transition-all duration-300 hover:scale-105"
                   >
                     <span>View Publication</span>
