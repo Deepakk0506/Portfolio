@@ -71,7 +71,7 @@ export default function Contact() {
 
     setIsSubmitting(true);
     try {
-      const endpoint = import.meta.env.VITE_SUPABASE_CONTACT_URL || '/api/contact';
+      const endpoint = '/api/contact';
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
