@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
 
     await resend.emails.send({
       from: 'no-reply@sunroks.com',
-      to: 'info@sunroks.com',
+      to: 'deepak.rc109@gmail.com',
       subject,
       html,
     });
