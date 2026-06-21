@@ -1,8 +1,7 @@
 {
   "version": 3,
-  "rootDirectory": "app",
   "build": {
-    "command": "npm run build",
-    "outputDirectory": "dist"
+    "command": "cd app && npm install && npm run build",
+    "outputDirectory": "app/dist"
   }
 }
