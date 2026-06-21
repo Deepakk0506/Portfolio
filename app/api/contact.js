@@ -16,7 +16,6 @@ module.exports = async (req, res) => {
     const body = req.body || {};
     const { name, email, message } = body;
 
-    // Basic validation
     if (!name || !email || !message) {
       return res.status(400).json({ error: 'Missing required fields' });
     }
@@ -25,7 +24,6 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: 'Invalid email address' });
     }
 
-    // Compose email
     const subject = `New contact form submission from ${name}`;
     const html = `
       <h2>New contact from portfolio site</h2>
@@ -35,7 +33,6 @@ module.exports = async (req, res) => {
       <p>${message.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g,'<br/>')}</p>
     `;
 
-    // Send email using Resend
     await resend.emails.send({
       from: 'no-reply@sunroks.com',
       to: 'info@sunroks.com',
