@@ -69,130 +69,132 @@ export default function Achievements() {
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue/50 to-transparent" />
         </div>
 
-        {/* Achievement Card */}
-        <div 
-          className={`relative transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <div className="glass-card p-8 sm:p-10 lg:p-12 text-center relative overflow-hidden group">
-            {/* Animated Background */}
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple/20 rounded-full blur-3xl animate-pulse" />
-              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-            </div>
-
-            {/* Trophy Icon */}
-            <div className="relative mb-8">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-gradient-to-br from-purple/20 to-blue/20 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500">
-                <Award className="w-12 h-12 sm:w-16 sm:h-16 text-purple-light" />
-              </div>
-              
-              {/* Rotating Ring */}
-              <div 
-                className="absolute inset-0 w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full border-2 border-dashed border-purple/30"
-                style={{
-                  animation: 'spin 20s linear infinite',
-                }}
-              />
-            </div>
-
-            {/* Content */}
-            <div className="relative space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple/10 border border-purple/30">
-                <span className="w-2 h-2 rounded-full bg-purple-light animate-pulse" />
-                <span className="text-sm text-purple-light font-medium">IEEE Publication</span>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {/* Achievement Card */}
+          <div 
+            className={`relative transition-all duration-700 delay-200 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <div className="glass-card p-8 sm:p-10 lg:p-12 text-center relative overflow-hidden group h-full">
+              {/* Animated Background */}
+              <div className="absolute inset-0 opacity-30">
+                <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple/20 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-outfit font-bold text-white">
-                Research Paper Published
-              </h3>
-
-              <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-                Published a research paper titled <span className="text-purple-light font-semibold">"Two and Four Wheels Differential Racing Bots"</span> at the <span className="text-blue-light font-semibold">2025 International Conference on Computing Technologies (ICOCT), IEEE</span>.
-              </p>
-
-              {/* Paper Details */}
-              <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-                  <FileText className="w-4 h-4 text-white/60" />
-                  <span className="text-sm text-white/60">ICOCT 2025</span>
+              {/* Trophy Icon */}
+              <div className="relative mb-8">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-gradient-to-br from-purple/20 to-blue/20 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                  <Award className="w-12 h-12 sm:w-16 sm:h-16 text-purple-light" />
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-                  <span className="text-sm text-white/60">Conference Paper</span>
-                </div>
+                
+                {/* Rotating Ring */}
+                <div 
+                  className="absolute inset-0 w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full border-2 border-dashed border-purple/30"
+                  style={{
+                    animation: 'spin 20s linear infinite',
+                  }}
+                />
               </div>
 
-              {/* View Paper Link */}
-              <div className="pt-6">
-                <a 
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple to-blue text-white font-medium hover:shadow-glow transition-all duration-300 hover:scale-105"
-                >
-                  <span>View Publication</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+              {/* Content */}
+              <div className="relative space-y-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple/10 border border-purple/30">
+                  <span className="w-2 h-2 rounded-full bg-purple-light animate-pulse" />
+                  <span className="text-sm text-purple-light font-medium">IEEE Publication</span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-outfit font-bold text-white">
+                  Research Paper Published
+                </h3>
+
+                <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+                  Published a research paper titled <span className="text-purple-light font-semibold">"Two and Four Wheels Differential Racing Bots"</span> at the <span className="text-blue-light font-semibold">2025 International Conference on Computing Technologies (ICOCT), IEEE</span>.
+                </p>
+
+                {/* Paper Details */}
+                <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+                    <FileText className="w-4 h-4 text-white/60" />
+                    <span className="text-sm text-white/60">ICOCT 2025</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+                    <span className="text-sm text-white/60">Conference Paper</span>
+                  </div>
+                </div>
+
+                {/* View Paper Link */}
+                <div className="pt-6">
+                  <a 
+                    href="#"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple to-blue text-white font-medium hover:shadow-glow transition-all duration-300 hover:scale-105"
+                  >
+                    <span>View Publication</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Second Achievement Card */}
-        <div 
-          className={`relative mt-8 transition-all duration-700 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <div className="glass-card p-8 sm:p-10 lg:p-12 text-center relative overflow-hidden group">
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple/20 rounded-full blur-3xl animate-pulse" />
-              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-            </div>
-
-            <div className="relative mb-8">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-gradient-to-br from-purple/20 to-blue/20 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500">
-                <Award className="w-12 h-12 sm:w-16 sm:h-16 text-purple-light" />
-              </div>
-              <div 
-                className="absolute inset-0 w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full border-2 border-dashed border-purple/30"
-                style={{
-                  animation: 'spin 20s linear infinite',
-                }}
-              />
-            </div>
-
-            <div className="relative space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple/10 border border-purple/30">
-                <span className="w-2 h-2 rounded-full bg-purple-light animate-pulse" />
-                <span className="text-sm text-purple-light font-medium">IEEE Publication</span>
+          {/* Second Achievement Card */}
+          <div 
+            className={`relative transition-all duration-700 delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <div className="glass-card p-8 sm:p-10 lg:p-12 text-center relative overflow-hidden group h-full">
+              <div className="absolute inset-0 opacity-30">
+                <div className="absolute top-0 left-1/4 w-64 h-64 bg-purple/20 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-outfit font-bold text-white">
-                Published at INDICON 2025
-              </h3>
-
-              <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-                Published a research paper titled <span className="text-purple-light font-semibold">“Military Surveillance and Landmine Detection with Safe Path Planning”</span> at the <span className="text-blue-light font-semibold">2025 IEEE 22nd India Council International Conference (INDICON)</span>.
-              </p>
-
-              <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-                  <FileText className="w-4 h-4 text-white/60" />
-                  <span className="text-sm text-white/60">INDICON 2025</span>
+              <div className="relative mb-8">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-gradient-to-br from-purple/20 to-blue/20 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                  <Award className="w-12 h-12 sm:w-16 sm:h-16 text-purple-light" />
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-                  <span className="text-sm text-white/60">Conference Paper</span>
-                </div>
+                <div 
+                  className="absolute inset-0 w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full border-2 border-dashed border-purple/30"
+                  style={{
+                    animation: 'spin 20s linear infinite',
+                  }}
+                />
               </div>
 
-              <div className="pt-6">
-                <a 
-                  href="#"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple to-blue text-white font-medium hover:shadow-glow transition-all duration-300 hover:scale-105"
-                >
-                  <span>View Publication</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+              <div className="relative space-y-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple/10 border border-purple/30">
+                  <span className="w-2 h-2 rounded-full bg-purple-light animate-pulse" />
+                  <span className="text-sm text-purple-light font-medium">IEEE Publication</span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-outfit font-bold text-white">
+                  Published at INDICON 2025
+                </h3>
+
+                <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+                  Published a research paper titled <span className="text-purple-light font-semibold">“Military Surveillance and Landmine Detection with Safe Path Planning”</span> at the <span className="text-blue-light font-semibold">2025 IEEE 22nd India Council International Conference (INDICON)</span>.
+                </p>
+
+                <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+                    <FileText className="w-4 h-4 text-white/60" />
+                    <span className="text-sm text-white/60">INDICON 2025</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+                    <span className="text-sm text-white/60">Conference Paper</span>
+                  </div>
+                </div>
+
+                <div className="pt-6">
+                  <a 
+                    href="#"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple to-blue text-white font-medium hover:shadow-glow transition-all duration-300 hover:scale-105"
+                  >
+                    <span>View Publication</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
