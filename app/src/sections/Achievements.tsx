@@ -213,7 +213,7 @@ export default function Achievements() {
           {[
             { value: '2', label: 'Research Papers' },
             { value: 'IEEE', label: 'Publication' },
-            { value: '2025', label: 'Published' },
+            { value: '2025, 2026', label: 'Published' },
           ].map((stat, index) => (
             <div 
               key={stat.label}
