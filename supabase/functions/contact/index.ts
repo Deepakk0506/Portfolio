@@ -29,6 +29,9 @@ export default async (req: Request) => {
     return new Response(JSON.stringify({ error: 'Mail API key not configured' }), { status: 500 });
   }
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 15000);
+
   try {
     const resp = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -42,6 +45,7 @@ export default async (req: Request) => {
         subject,
         html,
       }),
+      signal: controller.signal,
     });
 
     if (!resp.ok) {
@@ -51,7 +55,12 @@ export default async (req: Request) => {
 
     return new Response(JSON.stringify({ ok: true }), { status: 200 });
   } catch (err) {
+    if (err instanceof DOMException && err.name === 'AbortError') {
+      return new Response(JSON.stringify({ error: 'Email send request timed out' }), { status: 504 });
+    }
     console.error('Supabase contact function error:', err);
     return new Response(JSON.stringify({ error: 'Internal server error' }), { status: 500 });
+  } finally {
+    clearTimeout(timeoutId);
   }
 };
