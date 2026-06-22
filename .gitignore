@@ -86,3 +86,6 @@ temp/
 
 # TypeScript
 *.tsbuildinfo
+
+# Supabase temporary files
+supabase/.temp/
