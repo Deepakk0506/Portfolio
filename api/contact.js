@@ -19,8 +19,15 @@ const parseBody = async (req) => {
 };
 
 module.exports = async (req, res) => {
+  if (req.method === 'GET') {
+    const hasKey = !!process.env.RESEND_API_KEY;
+    const key = process.env.RESEND_API_KEY || '';
+    const masked = hasKey ? `${key.slice(0, 4)}...${key.slice(-4)}` : null;
+    return res.status(200).json({ ok: true, resend_key_set: hasKey, resend_key_mask: masked });
+  }
+
   if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
+    res.setHeader('Allow', 'POST, GET');
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
@@ -63,13 +70,16 @@ module.exports = async (req, res) => {
         html,
       }),
     });
+    const status = resp.status;
+    const detail = await resp.text().catch(() => '');
+    console.log('Resend response status:', status);
+    console.log('Resend response body:', detail);
 
     if (!resp.ok) {
-      const detail = await resp.text().catch(() => '');
-      return res.status(500).json({ error: 'Failed to send email', detail });
+      return res.status(502).json({ error: 'Failed to send email', status, detail });
     }
 
-    return res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true, status, detail });
   } catch (err) {
     console.error('Vercel contact API error:', err);
     return res.status(500).json({ error: 'Failed to send email' });
