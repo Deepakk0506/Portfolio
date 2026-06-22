@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { ArrowDown, Linkedin, Github, Mail } from 'lucide-react';
+import { ArrowDown, Linkedin, Github, Mail, Instagram } from 'lucide-react';
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -152,6 +152,15 @@ export default function Hero() {
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.instagram.com/it.z._.deepak_?igsh=MW1wcmF4ejFvMWpscg==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-purple/20 hover:border-purple/30 transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
               </a>
               <a 
                 href="mailto:deepak.rc109@gmail.com"
