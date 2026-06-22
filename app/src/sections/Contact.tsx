@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Linkedin, Github, Send, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Instagram, Send, ArrowUpRight } from 'lucide-react';
 
 const contactInfo = [
   {
@@ -32,6 +32,11 @@ const socialLinks = [
     icon: Github,
     label: 'GitHub',
     href: 'https://github.com/Deepakk0506',
+  },
+  {
+    icon: Instagram,
+    label: 'Instagram',
+    href: 'https://www.instagram.com/it.z._.deepak_?igsh=MW1wcmF4ejFvMWpscg==',
   },
 ];
 
